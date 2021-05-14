@@ -1,0 +1,1 @@
+This example uses the HTML5 application cache.

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="../stylesheets/style.css" />
+<title>COMP 120: Web Engineering - Static Content Optimization Techniques</title>
+</head>
+
+<body>
+<h1>COMP 120: Web Engineering</h1>
+<h2>Static Content Optimization Techniques</h2>
+
+<h3>Content</h3>
+<ul>
+<li>Dynamic - Changes based on inputs from users and from external sources (e.g., databases)</li>
+<li>Static - Fixed or pre-generated.  Examples: PDFs, Flash, fonts, audio, video, JavaScript, CSS</li>
+<li>Generating dynamic content is more expensive than serving static content</li>
+<li>The application and database tiers are only utilized when generating dynamic content...</li>
+<li>...thus, application and database optimizations only increase performance for dynamic content</li>
+<li>However, the vast majority of content in a web application, both in terms of number of objects and in terms of size, is static content!</li>
+<li>Delivering static content to the browser &gt; 85% of page load time!</li>
+</ul>
+
+<h3>Basic Optimization Methods</h3>
+<ul>
+<li>Reduce the size of content to deliver
+<ul>
+<li>Compress content</li>
+<li>What to compress: HTML, JS, RSS feeds, fonts, XML, CSS, images</li>
+<li>Minify: remove all comments and as much whitespace (alas, make it less human readable)</li>
+</ul>
+</li>
+<li>Reduce the number of requests needed to deliver content
+<ul>
+<li>Browsers spend most of their time <em>waiting</em> for content, not downloading content!</li>
+<li>One method: combine JS and CSS files.  Sending one 100 KB file is faster than ten 10 KB files.  More data = more redundancy = better compression</li>
+</ul>
+</li>
+<li>Organize the content so browsers can render it as fast as possible
+<ul>
+<li>Put CSS at the top of pages.  Why?  Allows the page to render progressively.  Also effective for usability purposes (visual cues)</li>
+<li>Put JavaScript at the <em>bottom</em> of pages</li>
+<li>Make JavaScript and CSS external.  The rule: <em>Using external files in the real world generally produces faster pages because the JavaScript and CSS files are cached by the browser. JavaScript and CSS that are inlined in HTML documents get downloaded every time the HTML document is requested.</em></li>
+</ul>
+</li>
+</ul>
+
+<h3>JavaScript and CSS Optimization Opportunities</h3>
+<ul>
+<li>Combine JS and CSS files
+<ul>
+<li><code>&lt;link href="http://.../?sitewide_20090710.css&amp;newcars_20090630.css" type="text/css" rel="stylesheet" media="all" /&gt;</code></li>
+<li><code>&lt;script src="http://.../ext/yahoo-dom-event_2.7.0.js&amp;ext/yahoo- animation_2.7.0.js&amp;sitewide_20090710.js" type="text/javacript"&gt;&lt;/script&gt;</code></li>
+<li>Note: your server must be configured to understand combined requests!</li>
+</ul>
+</li>
+<li>Why place JavaScript at the bottom of pages?  Because the rendering of a page pauses while a JavaScript file loads (presumably because the JavaScript being loaded could alter the DOM already in the process of being created).  In other words, loading them block parallel downloads.  Alas, large files or network latency can cause significant delays as a page loads.</li>
+<li>Minification:
+<ul>
+<li>Tools: <a href="http://crockford.com/javascript/jsmin" target="_blank">JSMin</a>,  <a href="https://dojotoolkit.org/" target="_blank">Dojo Toolkit</a>, <a href="https://developers.google.com/closure/?csw=1" target="_blank">Google Closure Tools</a>, <a href="https://yui.github.io/yuicompressor/" target="_blank">YUI Compressor</a></li>
+<li>Problems: maintenance and obfuscation</li>
+</ul>
+</li>
+<li>Many frameworks can combine automatically combine your JavaScript and CSS</li>
+</ul>
+
+<h3>Expiry</h3>
+<ul>
+<li>Avoids unnecessary HTTP requests on subsequent page views and static content</li>
+<li>Very useful for Ajax applications: control caching for Ajax applications</li>
+<li>Informs the browser of the date after which the result is to be considered stale</li>
+<li>Example in PHP: <code>header("Expires: Fri, 17 Jul 2010 16:00:00 GMT");</code>  This is when the cached result will expire</li>
+<li>For dynamic content, use an appropriate <code>Cache-Control</code> header to help the browser with conditional requests</li>
+</ul>
+
+<h3>Content Delivery Network (CDN)</h3>
+<ul>
+<li>The idea: disperse your static content</li>
+<li>Remember, the user's proximity to your web server has an impact on response times</li>
+<li>What you don't want to do: re-engineer or re-architect your web application to work in a distributed architecture</li>
+<li>Deploying your content across multiple, geographically dispersed servers will make your pages load faster from the user's perspective</li>
+<li>Example CDNs: Akamai, <a href="https://www.cloudflare.com/">Cloudflare</a>, <a href="https://aws.amazon.com/cloudfront/" target="_blank">Amazon CloudFront</a></li>
+</ul>
+
+<h3>Caching</h3>
+<ul>
+<li>Preserving and managing a collection of data that replicates original data computed earlier or stored in another location</li>
+<li>The idea: eliminate retrieving the original data repeatedly</li>
+<li>Caching opportunities: CSS and JavaScript (which may not change for a long time).  A simple way to ensure the browser knows when to fetch a new version of a file is to give each file a version ID.</li>
+</ul>
+
+<h3>HTML5 Application Cache</h3>
+<ul>
+<li>The browser cache: temporary storage for content (e.g., HTML, CSS, JavaScript, images)</li>
+<li>Problems with traditional browser cache: can be easily corrupted (e.g., by downloading big file)</li>
+<li>The HTML5 application cache
+<ul>
+<li>Independent of the traditional browser cache; stored in a separate location on disk</li>
+<li>Can integrate with local storage or Web SQL (think data for an offline game)</li>
+<li>APIs available to control downloading of cache files, and what not to cache</li>
+<li>You can specify explicitly what to content to cache and what content requires network access!</li>
+<li>The idea: have a <code>cache-manifest</code> file and specify it in the <code>&lt;html&gt;</code> tag</li>
+<li>Reference and tutorial: <a href="http://www.html5rocks.com/en/tutorials/appcache/beginner/" target="_blank">http://www.html5rocks.com/en/tutorials/appcache/beginner/</a></li>
+</ul>
+</li>
+<li>Example: <a href="http://tuftsdev.github.io/WebEngineering/examples/mspacman" target="_blank">Ms. Pac-Man</a></li>
+<li>Benefits: reduces server load, faster loading, conserves bandwidth</li>
+<li>Really powerful result: offline web applications</li>
+</ul>
+
+<h3>Tools</h3>
+<ul>
+<li><a href="https://developers.google.com/speed/pagespeed/" target="_blank">Google PageSpeed Tools</a></li>
+<li><a href="http://yslow.org/" target="_blank">YSlow!</a></li>
+</ul>
+
+<h3>Resources</h3>
+<ul>
+<li><a href="https://developer.yahoo.com/performance/rules.html" target="_blank">Best Practices for Speeding Up Your Web Site (on Yahoo! Developer Network)</a></li>
+</ul>
+
+</body>
+</html>

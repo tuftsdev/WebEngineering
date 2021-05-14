@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+<title>Where Am I?</title>
+<link rel="stylesheet" href="gmap_api_example_style.css" />
+<script>
+	var lat = -99999;
+	var lng = -99999;
+	function getLocation() {
+		console.log("I am here 1");
+		navigator.geolocation.getCurrentPosition(function(somePos) {
+			console.log("I am here 2");
+			lat = somePos.coords.latitude;
+			lng = somePos.coords.longitude;
+			printLocation();
+		});
+		console.log("I am here 3");
+	}
+
+	function printLocation() {
+		console.log("I am here 4");
+		elem = document.getElementById("location");
+		elem.innerHTML = '<p class="fun">' + lat + ", " + lng + "</p>";
+	}
+</script>
+</head>
+
+<body onload="getLocation()">
+	<h1>Where Am I</h1>
+	<div id="location">Trying to determine location...</div>
+</body>
+</html>

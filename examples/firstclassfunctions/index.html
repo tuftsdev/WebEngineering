@@ -1,0 +1,27 @@
+<!doctype html>
+
+
+<html lang="en">
+	<head>
+		<title>First-Class Functions</title>
+		<script>
+			list = [5, 10, 8, 3, 13, -9, 1];
+
+			function map(fn, a) {
+				for (i = 0; i < a.length; i++) {
+					a[i] = fn(a[i]);
+				}
+			}
+			haha = function(someValue) {
+				alert(someValue * 99);
+			};
+			hoho = haha;
+			map(hoho, list);
+
+		</script>
+	</head>
+
+	<body>
+		<h1>First-Class Functions</h1>
+	<body>
+</html>

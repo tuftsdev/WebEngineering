@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @star.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @star.last_name %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @star.created_at %>
+</p>
+
+<%= link_to 'Edit', edit_star_path(@star) %> |
+<%= link_to 'Back', stars_path %>

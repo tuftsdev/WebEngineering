@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="stylesheets/style.css" />
+<title>COMP 120: Web Engineering - Semester Project</title>
+</head>
+
+<body>
+<h1>COMP 120: Web Engineering</h1>
+<h2>Spring 2017 Semester Project</h2>
+
+<h2>Scenario</h2>
+<p class="stress">Yours truly has become the interim Vice President of Campus Services at a major university.  I am looking for your help to bring Campus Services at the school to the 21st century with regards to technology.</p>
+
+<h3>Responses to Your Questions</h3>
+<p>Q: Is there a target audience in mind?</p>
+<p>A: Campus Services serve the student, faculty, staff, alumni, guests, and affiliates</p>
+
+<p>Q: What type of solutions: web or mobile?</p>
+<p>A: Both. You cannot ignore mobile.  To illustrate the importance of mobile, over 50% of the traffic to our website now come from mobile devices.</p>
+ 
+<p>Q: How many students, faculty, and staff?</p>
+<p>A: There is well over 50,000 active student, faculty, and staff in total.  This may / may not include affiliates.</p>
+ 
+<p>Q: Are there services, resources that we can use?</p>
+<p>A: We currently have a website which is largely brochureware.</p>
+ 
+<p>Q: What data should be made public? What data should be made private?</p>
+<p>A: Data on personnel and anything inventory related (e.g., location and size of water tanks, boilers, devices containing refrigerants) must be made private.  There is also a federal law, Family Educational Rights and Privacy Act (FERPA), that protects student data privacy.</p>
+ 
+<p>Q: Is there an Single-Sign On (SSO) system used at the University?</p>
+<p>A: Yes, but I do not know much information about it.</p>
+ 
+<p>Q: Do you want a portal for everything or a tool or web apps for specific task?</p>
+<p>A: As I mentioned earlier, we currently have a website which is largely brochureware.  Incremental improvements over a massive system make more sense --and less overwhelming for people to deal with.  Lots of people do not need everything.</p>
+ 
+<p>Q: What are the different departments under Campus Services?</p>
+<p>A:
+<ul>
+<li>Building, Energy, and Facilities</li>
+<li>Dining</li>
+<li>Environmental Health &amp; Safety</li>
+<li>Event Management</li>
+<li>Housing</li>
+<li>ID Cards</li>
+<li>Mail Services</li>
+<li>Printing</li>
+<li>Public Safety</li>
+<li>Real Estate</li>
+<li>Sustainability</li>
+<li>Transportation</li>
+</ul>
+
+<p>Q: Are there are immediate deficiencies you can think of?</p>
+<p>A: Process.  We have lots of overhead.  My goal in the next three years is to make Campus Services more efficient and leaner.</p>
+
+<p>Q: Can you give me an idea of the budget?</p>
+<p>A: We are looking to hire at least 3 more people to support the mission of bringing Campus Services at the school to the 21st century with regards to technology.</p>
+
+<hr/>
+<h2 id="leg1">Leg 1: Your Job Is Not to Write Code</h2>
+<h3>Overview</h3>
+<p>For the next few weeks, your team will build a minimal viable product of your team's project idea.  A Minimum Viable Product (MVP) "is that version of a new product which allows a team to collect the maximum amount of validated learning about customers with the least effort" (<a href="http://www.startuplessonslearned.com/2009/08/minimum-viable-product-guide.html" target="_blank">http://www.startuplessonslearned.com/2009/08/minimum-viable-product-guide.html</a>).  Future builds will include user authentication and API design.</p>
+
+<h3>Preliminaries</h3>
+<p>Read <a href="https://medium.com/@lauraklein/your-job-is-not-to-write-code-d002609b117a#.1v9ki6evg" target="_blank">Your Job Is Not to Write Code</a>.  The point of this reading is to make you think about the value of your work now and in the future.</p>
+
+<h3>Instruction</h3>
+<p>For Thursday, February 2nd, your team shall prepare and create:</p>
+<ol>
+	<li>A short description of your team's project idea.</li>
+	<li>A data schema for your team's project idea.  While the data schema does not have to be thorough, it should not restrict potential expansion.</li>	
+	<li>A wireframe of the most important views of your team's project idea (i.e., the front end).</li>
+	<li>An explanation of your team's design rationales.</li>
+</ol>
+
+<h3>Submission</h3>
+<p>The first entry of your <a href="index.html#notebook">engineering notebook</a> shall be about your project.  The entry shall contain pictures of data schema and wireframes.  The entry shall also elaborate on the design rationales.</p>
+<p>The notebook can be in form of a blog (e.g., Tumblr, GitHub, WordPress).  An example of a good engineering notebook from the Mobile Development class in fall 2016: <a href="https://lunaandchris.wordpress.com/" target="_blank">https://lunaandchris.wordpress.com/</a>. Social media (e.g., via Twitter, Facebook, Snapchat) is not acceptable as your engineering notebook.</p>
+<p class="note">Email me link to your engineering notebook.</p>
+
+<h3>Presentation</h3>
+<p>In class on Thursday, February 2nd, 5 teams, chosen at random at least 24 hours before class, will present their data schema and wireframe to the class.  A selected team will have 5 minutes to explain their design rationale to the class, and 5 minutes for questions and answers from the class.</p>
+
+<h3>Restrictions</h3>
+<p>Do not create a slide deck (e.g., a PowerPoint or Google Docs presentation).  It is not a good use of our time.  You also need to develop the skill of giving short verbal pitches (in this case, explaining what your team's project idea is).</p>
+<hr/>
+
+<h2 id="leg2">Leg 2: Exploring Your Options</h2>
+
+<h3>Overview</h3>
+<p>In previous years, a specific programming language and web framework were chosen for the semester project. (can you guess why?) This year, there will be no technology constraints for the semester project: your team can use any web framework, programming language, or database for the semester project.  While given enormous flexibility this semester, it comes at the expense of understanding risks and limitations.  Your team's goals for this leg are to explore possible options and to weigh the pros and cons of each possible option.  IMPORTANT: your team's job is not to make any decisions until you hear thoughts and comments from other teams in the class.</p>
+
+<p>I've realized that selecting a specific programming language and web framework for the semester project is not necessarily a good thing.  While it forces students to learn perhaps a new programming language or web framework, new programming languages and web frameworks spawn (and change) constantly.  Thus, pigeonholing into specific technologies is a disservice for the long-term.</p>
+
+<h3>Instructions</h3>
+<p>As an entry in your team's engineering notebook, select at least two web frameworks, at least two databases, at least two front-end frameworks (if any), and at least two hosting infrastructures that your team may want to use.  For each option, list the pros and cons.  Cons can include cost, lack of knowledge (e.g., members of team have no knowledge of programming language X).  Statements containing little substance such as: "Person A absolutely despises technology Y" are not acceptable.</p>
+
+<h3>Purposes of This Leg</h3>
+<p>The main purpose of this leg is to eventually build a good story to tell on <em>why</em> certain technologies are being used.  A good example is Instagram: read <a href="https://engineering.instagram.com/what-powers-instagram-hundreds-of-instances-dozens-of-technologies-adf2e22da2ad#.slz0w5q5m" target="_blank">https://engineering.instagram.com/what-powers-instagram-hundreds-of-instances-dozens-of-technologies-adf2e22da2ad#.slz0w5q5m</a>.  The other purpose of this leg is to lead each team build competency in new areas.</p>
+
+<h3>Presentation</h3>
+<p>In class on Tuesday, February 14th, 5 teams, chosen at random at least 24 hours before class, will present their options to the class.  A selected team will have 5 minutes to explain their options and risk analysis to the class, and 5 minutes for questions and answers from the class.</p>
+
+<hr/>
+
+<h2 id="leg3">Leg 3: Implementing the Minimum Viable Product</h2>
+
+<h3>Overview</h3>
+<p>Your team must now implement a minimum viable product (MVP) using the data schema, wireframe, and technology decisions made previously.  The idea of a minimum viable product is to get something to market as soon as possible, get real people using it, and then iterate or add features based on user feedback instead of assumptions.</p>
+
+<p><img src="https://www.applicoinc.com/wp-content/uploads/2015/07/Screen-Shot-2015-07-13-at-3.42.13-PM-604x400.png" alt="Doing an MVP" /></p>
+
+<p>Some reads to learn more about the idea of an MVP of a product:</p>
+<ul>
+	<li><a href="https://www.quora.com/What-is-a-minimum-viable-product" target="_blank">https://www.quora.com/What-is-a-minimum-viable-product</a> --has many real examples</li>
+	<li><a href="https://www.applicoinc.com/blog/mvp-mobile-app/" target="_blank">https://www.applicoinc.com/blog/mvp-mobile-app/</a></li>
+	<li><a href="http://brolik.com/blog/build-app-minimum-viable-product-mvp/" target="_blank">http://brolik.com/blog/build-app-minimum-viable-product-mvp/</a></li>
+</ul>
+
+<h3 class="note">Requirements and Constraints</h3>
+<ol>
+<li>Your team is required to implement the one or two most critical features of the web application.  Each feature must follow RESTful patterns.</li>
+<li>Your team is required to make the MVP "pretty."  That is, use a number of (e.g., more than 1) JavaScript files and stylesheets.</li>
+<li>Do not push any code to the <code>master</code> branch on Git repository.  Create and work off of a different branch (e.g., <code>alpha</code>, <code>experimental</code>).</li>
+<li>Do not deploy this MVP to production (e.g., using Heroku).  For this leg, this MVP shall run on <code>localhost</code>.  Static content such as photos and videos shall be stored in a folder on <code>localhost</code> for now.</li>
+<li>Do not do more than the above requirements.  Do not go above-and-beyond the requirements (e.g., implement the entire product)!</li>
+</ol>
+
+<h3>Submission and Structuring Your Private GitHub Repository</h3>
+
+<p>The code shall reside at the top-level of your private GitHub repository.  For example if you are Team 1, the directory structure shall look something like the following <em>in a non-master branch</em>:</p>
+
+<pre>
+comp20-s2017-team1 
+|
+| - - README.md
+|
+| - - Web framework stuff
+</pre>
+
+<p>The reason for this is for easier deployment of your work in the near future.</p>
+
+<h3>The <code>README.md</code> and Entry In Your Engineering Notebook</h3>
+<p>In the <code>README.md</code> file at the root of your team's private repository, list all packages, APIs, and dependencies that are used --and link to each dependency's developer documentation</p>
+<p>In your weekly entry in your team's engineering notebook, be sure to mention:</p>
+<ol>
+	<li>Approximate number of hours your team spent learning the technology stack</li>
+	<li>Approximate number of hours your team spent implementing the MVP</li>
+	<li>The challenges your team faced working on this leg</li>
+</ol>
+
+<h3>Presentation</h3>
+<p>In class on Tuesday, March 7th, 4 teams will present their MVP to the class. Each selected team will have 5 minutes to show their MVP and 5 minutes for questions and answers from the class.</p>
+<hr/>
+
+<h2 id="leg4">Leg 4: Production, Unit Testing, Code Review, and Static Content Optimizations</h2>
+
+<h3>Overview</h3>
+<p>Imagine: your product could receive as many as 15,000 unique visits per day once it is in production.  Your team is about to go there.  It is time to "go live" --deploy your Minimum Viable Product (MVP) to production.  The world of production is very different than development or testing environments as production is very unforgiving. There was a recent article: <a href="https://blog.skyliner.io/you-cant-have-a-rollback-button-83e914f420d9#.kkuwy4kr3" target="_blank">"You can’t have a rollback button.  The Internet is a big truck. It’s really hard to drive it backwards."</a></p>
+
+<h3>Deliverables</h3>
+<p>For this leg and for the next two weeks, your team shall make at least three entries in your engineering blog:</p>
+<ol>
+	<li>In one post, announce the live URL of your team's MVP and explain why your team chose the test framework(s) that are being used.</li>
+	<li>In a second post, your team shall review the source code of another team's project.  The team will be randomly assigned to you --see below.  NOTE: please provide constructive comments. Destructive and uninformative comments will be not be tolerated. Your job is to make other team's apps better.</li>
+	<li>In a third post, <span class="stress">prove</span> to everyone that the performance of your product has vastly improved compared to what you originally wrote (or hacked).  Specifically, you must answer the following questions:
+		<ol>
+			<li>What optimization techniques did you use?</li>
+			<li>What tools did you use to test the performance of your product before and after optimizations made? Using no tools for this leg is not acceptable!  More below.</li>
+			<li>What performance aspects have been improved (e.g., loading time, file size)?  Please provide numbers, percentages, or letter grades.</li>
+			<li>Are there any lingering potential performance issues?</li>
+		</ol>
+	</li>
+</ol>
+
+<h3>Code Review Lottery</h3>
+<p>Each team has been randomly assigned another team's source code to review.  Each team has been given <em>read</em> access to each team's repository on GitHub.</p>
+<ol>
+	<li>Team 1 shall review Team 8's source code</li>
+	<li>Team 2 shall review Team 13's source code</li>
+	<li>Team 3 shall review Team 5's source code</li>
+	<li>Team 4 shall review Team 1's source code</li>
+	<li>Team 5 shall review Team 14's source code</li>
+	<li>Team 6 shall review Team 2's source code</li>
+	<li>Team 7 shall review Team 9's source code</li>
+	<li>Team 8 shall review Team 12's source code</li>
+	<li>Team 9 shall review Team 6's source code</li>
+	<li>Team 10 shall review Team 7's source code</li>
+	<li>Team 12 shall review Team 3's source code</li>
+	<li>Team 13 shall review Team 4's source code</li>
+	<li>Team 14 shall review Team 10's source code</li>
+</ol>
+
+<h3>Instructions</h3>
+<p>Your team is free to deploy the MVP however you want, including using hosting services such as Digital Ocean, Linode, Amazon Web Services (AWS), Heroku, or a combination of many hosting or cloud services.  You shall no longer user localhost for demonstrations; localhost shall only be used for development purposes.</p>
+
+<p>Your team must also learn and utilize a unit testing framework(s) and provide tests for the MVP.  The scope of the tests shall be limited to only to the models, controllers, and views.  Make sure tests are provided in the source code repository (generally in a folder named <code>test</code>).</p>
+
+<p>Your team must make as many optimizations to your existing web application as possible to your product using the techniques that we have discussed.  At the very least, your team must use at least four (4) techniques to optimize your product:</p>
+<ul>
+	<li>HTML5 application cache</li>
+	<li>A content delivery network (CDN)</li>
+	<li>JavaScript and CSS minification</li>
+	<li>Combining JavaScript files, CSS files</li>
+	<li>Expiry</li>
+	<li>JavaScript at bottom of pages</li>
+</ul>
+
+<h3>Performance Tools</h3>
+<p>There is a plethora of tools that you can use to measure the performance of your product before and after optimizations made:</p>
+<ul>
+	<li><a href="https://developer.chrome.com/devtools#audits" target="_blank">Audits in Google Developer Tools</a></li>
+	<li><a href="https://developers.google.com/speed/pagespeed/" target="_blank">PageSpeed Tools</a></li>
+	<li><a href="http://yslow.org/" target="_blank">YSlow</a></li>
+	<li><a href="https://jmeter.apache.org/" target="_blank">JMeter</a></li>
+	<li><a href="https://loader.io/" target="_blank">loader.io</a></li>
+</ul>
+
+<h3>Code Review References</h3>
+<ul>
+<li><a href="https://blog.jetbrains.com/upsource/2015/07/23/what-to-look-for-in-a-code-review/" target="_blank">What to look for in a Code Review (jetbrains.com)</a></li>
+<li><a href="https://blog.fogcreek.com/increase-defect-detection-with-our-code-review-checklist-example/" target="_blank">Stop More Bugs with our Code Review Checklist (fogcreek.com)</a></li>
+<li><a href="http://fabiensanglard.net/doomIphone/doomClassicRenderer.php" target="_blank">DOOM Engine Code Review (fabiensanglard.net)</a></li>
+<li><a href="http://fabiensanglard.net/prince_of_persia/index.php" target="_blank">Price of Persia Code Review (Fabien Sanglard sets the standard for writing amazing code reviews)</a></li>
+</ul>
+
+<h3>Presentation</h3>
+<p>In class on Thursday, March 16th, 4 teams will be chosen at random to present their implementation to the class. Selected teams will have 5 minutes to explain their plan, concerns, and findings to the class, and 5 minutes for questions and answers from the class.</p>
+<hr/>
+
+<h2 id="leg5">Leg 5: The Technical Writing Seminar and Memory Caching</h2>
+
+<h3>Overview</h3>
+<p>In this leg, your team will write a public Application Program Interface (API) for your product.  Your team is also expected to use memory caching in some capacity.</p>
+
+<!-- Thanks Tyler -->
+<h3>Requirements</h3>
+<ol>
+<li>A RESTful endpoint that allows for all possible modifications to your project. If a user can both create new content and edit old ones, you should have at least one endpoint to enable these.</li>
+<li>A RESTful endpoint that allows for user creation. This may mean that it's finally time to add users to your application.</li>
+<li>Documentation for <span class="stress">everything</span>. This is the most important part of this. I, or any other team, should be able to use your team's API without looking at how you implemented it. Be sure to specify any headers that are necessary to use.</li>
+<li>Specify a plan for which endpoints will need authentication and authorization, and what kinds. <span class="note">You should NOT implement.</span>.</li>
+<li>Feel free to use API builders such as Grape (Ruby) or Sandman (Python) but you will need to understand how they architect the API and why they do it the way they do. The purpose of this assignment is that you understand RESTful interfaces.</li>
+</ol>
+<p>A big part of the assessment will be the thoroughness of the API and documentation. When you're done, you should be able to transition your project to rely entirely on this API and not have any full page reloads (though you should NOT do this transition yet). Consider security -- should I be able to POST to every endpoint? Should certain users only receive certain resources when they do a GET call?</p>
+<p>Anything have to do with user permissions should be carefully considered but not to be implemented. You will do authorization and authentication in a later leg.</p>
+
+<h3>Submission</h3>
+<ol>
+<li>Please make your API and documentation publicly availably on your web application.  It can be a link at the footer of the home page or on each page.</li>
+<li>An engineering describing all of the choices you made in implementing the API. Did you end up using an API generator? Why? Why didn't you? What did you memory caching for? Did memory caching improve performance?  There are no right answers, but there should be a thought process.</li>
+</ol>
+
+<h3>Presentation</h3>
+<p>In class on Thursday, April 6th, 4 teams will be chosen at random to present their implementation to the class. A selected team will have 5 minutes to demonstrate API and documentation to the class, and 5 minutes for questions and answers from the class.</p>
+
+<h3>References</h3>
+<ul>
+	<li><a href="https://msdn.microsoft.com/en-us/magazine/gg309172.aspx" target="_blank"><span class="title">A Coder’s Guide to Writing API Documentation</span> (MSDN)</a></li>
+	<li><a href="https://stackoverflow.com/questions/6500468/recommendations-for-writing-an-api" target="_blank">https://stackoverflow.com/questions/6500468/recommendations-for-writing-an-api</a></li>
+</ul>
+
+<!--<h2 id="leg8">Leg 6: Revisiting a fundamental concept covered in COMP 40</h2>
+<h2 id="leg6">Leg 6: The Bounty</h2>
+<h2 id="leg7">Leg 7: Final Project</h2>-->
+
+<h2 id="teams">Teams</h2>
+<p>Team 1 (Presented Leg 1)</p>
+<ul>
+<li>J. Campbell</li>
+<li>M. Epstein</li>
+<li>M. Morisi</li>
+<li>Z. Zager</li>
+</ul>
+
+<p>Team 2 (Presented Leg 2)</p>
+<ul>
+<li>J. Barth</li>
+<li>F. Caiazzo</li>
+<li>H. Freedman</li>
+<li>R. Robinson</li>
+</ul>
+
+<p>Team 3 (Presenting Leg 3)</p>
+<ul>
+<li>L. Brady</li>
+<li>S. Devanahalli</li>
+<li>J. Shih</li>
+<li>B. Shrestha</li>
+</ul>
+
+<p>Team 4 (Presented Leg 2)</p>
+<ul>
+<li>S. Bekele</li>
+<li>L. Danny</li>
+<li>J. Roth</li>
+<li>S. Shaidani</li>
+</ul>
+
+<p>Team 5 (Presented Leg 1)</p>
+<ul>
+<li>N. Carlino</li>
+<li>P. Jain</li>
+<li>E. Marmol</li>
+<li>J. Wei</li>
+</ul>
+
+<p>Team 6 (Presenting Leg 3)</p>
+<ul>
+<li>M. Asnes</li>
+<li>E. Jarzombek</li>
+<li>A. Plumer</li>
+</ul>
+
+<p>Team 7 (Presented Leg 1)</p>
+<ul>
+<li>J. Fairfield-Sonn</li>
+<li>M. Greenwald</li>
+<li>E. Simendinger</li>
+</ul>
+
+<p>Team 8 (Presented Leg 2)</p>
+<ul>
+<li>J. Liu</li>
+<li>R. Qin</li>
+<li>C. Wan</li>
+<li>B. Yung</li>
+<li>T. Zhu</li>
+</ul>
+
+<p>Team 9 (Presented Leg 1)</p>
+<ul>
+<li>B. Chung</li>
+<li>J. Chu</li>
+<li>K. Islam</li>
+<li>K. Liu</li>
+</ul>
+
+<p>Team 10 (Presented Leg 1)</p>
+<ul>
+<li>J. Lau</li>
+<li>T. Nguyen</li>
+<li>N. Shashok</li>
+</ul>
+
+<p>Team 12 (Presented Leg 2)</p>
+<ul>
+<li>Z. Jiang</li>
+<li>J. Wang</li>
+<li>Vincent Weng</li>
+<li>N. Zhu</li>
+</ul>
+
+<p>Team 13 (Presenting Leg 3)</p>
+<ul>
+<li>D. Navon</li>
+<li>C. Troxell</li>
+<li>L. Levonick</li>
+<li>K. Mimmack</li>
+</ul>
+
+<p>Team 14 (Presenting Leg 3)</p>
+<ul>
+<li>A. Brown</li>
+<li>P. Chhum</li>
+<li>D. Kim</li>
+<li>G. Salmeron-Rubio</li>
+</ul>
+
+</body>
+</html>

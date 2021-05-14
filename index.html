@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="stylesheets/style.css" />
+	<title>COMP 120: Web Programming and Engineering</title>
+</head>
+
+<body>
+	<h1>COMP 120: Web Programming and Engineering</h1>
+	<h2>Tufts University Department of Computer Science, Summer Session A 2021 ONLINE</h2>
+
+	<h2>Course Description</h2>
+	<p>Web applications as complex systems that deliver a plethora of functionality to a large number of users, and exhibit unique behaviors and demands in terms of performance, scalability, usability, and security. How the web works, limitations of client-side and server-side technologies including frameworks and APIs, content optimization, and data persistence and storage. Projects will involve search, using the cloud infrastructure, location-based services, mobile web development, and using tools to assess the security and privacy of web applications.</p>
+
+	<h2>Instructor</h2>
+	<ul>
+		<li>Ming Chow, <a href="mailto:mchow@cs.tufts.edu">mchow@cs.tufts.edu</a></li>
+	</ul>
+
+	<h2>Prerequisites</h2>
+	<ul>
+		<li>COMP 15 or Data Structures equivalent course.</li>
+	</ul>
+
+	<h2>Assessment</h2>
+	<ul>
+		<li><a href="#labs">Labs (65%)</a></li>
+		<li>Quizzes (30%; there will be three)</li>
+		<li>Subjective factors including asking appropriate questions, answering questions well, organizing study groups, posting good readings related to the course, etc. (5%)</li>
+	</ul>
+
+	<h2>Course Infrastructure</h2>
+    <ul>
+        <li>Lab submissions: Google Forms, GitHub</li>
+        <li>Quizzes: <a href="https://canvas.tufts.edu/" target="_blank">Canvas (Tufts UTLN required)</a></li>
+        <li>Announcements: <a href="https://piazza.com/tufts/summer2021/comp120" target="_blank">Piazza</a></li>
+        <li>Discussions: <a href="https://piazza.com/tufts/summer2021/comp120" target="_blank">Piazza</a></li>
+	</ul>
+	
+	<h2 id="syllabus">Syllabus</h2>
+	<h3>Week 1: The Fundamentals</h3>
+	<p>By the end of this week, you will learn how the web works, use the developer tools in a web browser to see HTTP request and response headers and data, and use Git and GitHub.</p>
+	<ul>
+		<li><a href="notes/intro.html">Course Introduction</a></li>
+		<li><a href="notes/http.html">What is the Internet?</a></li>
+		<li><a href="notes/http.html">What is the Web and the HyperText Transfer Protocol (HTTP)</a></li>
+		<li><a href="notes/git.html">Revision control with Git</a></li>
+	</ul>
+
+	<h3>Week 2: Developing Front End Content</h3>
+	<p>By the end of this week, you will be able to create a static website with a few pages using HTML and CSS --from scratch, and you will create a web page that responds depending on screen width on a web browser.</p>
+	<ul>
+		<li><a href="notes/html.html">HyperText Markup Language (HTML)</a></li>
+		<li><a href="notes/css.html">Cascading Style Sheets (CSS)</a></li>
+		<li><a href="notes/css3.html">Mobile and responsive content design</a></li>
+	</ul>
+
+	<h3>Week 3: The JavaScript Programming Language</h3>
+	<p>By the end of this week, you will learn the JavaScript programming language and the important aspects of the language including data structures, functions, built-in object, and event handling; use JavaScript in an HTML document to manipulate contents on a web page after it is loaded via Document Object Model; create a web page using the Google Maps JavaScript API.</p>
+	<ul>
+		<li><a href="notes/javascript.html">Lists</a></li>
+		<li><a href="notes/functions.html">Objects</a></li>
+		<li><a href="https://stackoverflow.com/questions/1470488/what-is-the-function-of-the-var-keyword-and-when-to-use-it-or-omit-it" target="_blank">Variables and variable scoping</a></li>
+		<li><a href="notes/functions.html">Functions</a></li>
+		<li><a href="notes/event_handling.html">Events</a></li>
+		<li><a href="notes/dom.html">Combining JavaScript and HTML: the Document Object Model (DOM)</a></li>
+		<li><a href="notes/json.html">JavaScript Object Notation (JSON)</a></li>
+		<li><a href="notes/performance_static.html">Static Content Performance Optimization</a></li>
+	</ul>
+
+	<h3>Week 4: Making Front End Content Interactive and Dynamic</h3>
+	<p>By the end of this week, you will learn how to download data from a remote location and use the data to update a portion of a web page, store a small amounts of data persistently on a web browser, and use a JavaScript front-end framework.</p>
+	<ul>
+		<li><a href="notes/ajax.html">Asynchronous JavaScript and XML (AJAX)</a></li>
+		<li><a href="notes/persistence1.html">Cookies and Local Storage</a></li>
+		<li><a href="notes/jquery.html">jQuery</a></li>
+	</ul>
+
+	<h3>Week 5: Developing the Server Side</h3>
+	<p>By the end of this week, you will create a server-side (or back-end) application and deploy it to a cloud infrastructure via Heroku where it can be made publicly accessible.</p>
+	<ul>
+		<li><a href="notes/nodejs.html">Node.js: Developing the server side using JavaScript</a></li>
+		<li><a href="https://asciinema.org/a/40322" target="_blank">Hosting your web application on Heroku</a></li>
+		<li><a href="notes/postgresql.html">Storing lots of data with PostgreSQL</a></li>
+		<li><a href="https://github.com/tuftsdev/WebEngineering/tree/gh-pages/examples/nodejs/nodepsqlapp" target="_blank">Connecting Node.js web application to a PostgreSQL database</a></li>
+	</ul>
+
+	<h3>Week 6: Web Security</h3>
+	<p>By the end of this week, you will learn the basics of web security including to never trust user input, break a web application, and identify vulnerabilities in a web application.</p>
+	<ul>
+		<li>What is security?</li>
+		<li><a href="https://owasp.org/www-project-top-ten/" target="_blank">The OWASP Top 10</a></li>
+		<li><a href="https://cwe.mitre.org/top25/archive/2019/2019_cwe_top25.html" target="_blank">2019 CWE Top 25 Most Dangerous Software Errors</a></li>
+		<li>Vulnerability: Cross-Site Scripting (#7 on OWASP Top 10)</li>
+		<li>Vulnerability: Injection (#1 on OWASP Top 10)</li>
+	</ul>
+
+	<h2 id="labs">Labs and Workload: All The Labs with Expected Length and Difficulty</h2>
+	<p>Generally speaking, workload is hard to say because the skill-set of the students varies: from those who have just completed Introduction to Computer Science and/or Data Structures to those who already have a Computer Science degree. In terms of number of hours you should expect to spend per week, my rough estimate and expectation is anywhere from 3 to 10 hours of work a week.</p>
+
+	<p>All labs for a given week are due on the following week on a Wednesday at 11:59 PM PDT (so yes, a week-and-a-half to do all labs for a week). The new week will be made available on Monday morning at 10 AM PDT. Late labs are not accepted.</p>
+	<ul>
+		<li>Lab 1 (Week 1): <a href="https://docs.google.com/forms/d/e/1FAIpQLSdOfwhA1jaKyIleeMhIG-8DkbHd_8n-xFY3qmjouHs8a3lkHQ/viewform">Information Form</a>, Very short (30 minutes)</li>
+		<li>Lab 2 (Week 1): <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1qQMz_5GsPDJuJABu25LrFKiTvQEOWPzF_Re9Y71xF3D1Pg/viewform">HTTP and Developer Tools</a>, Short (1 hour max) to Medium (2 - 3 hours)</li>
+		<li>Lab 3 (Week 1): <a href="assignments/summer2021/lab-git.html">Git Introduction</a>, Very short (30 minutes) to Short</li>
+		<li>Lab 4 (Week 2): <a href="assignments/summer2021/lab-portfolio.html">Your Portfolio</a>, Medium to Long (3+ Hours)</li>
+		<li>Lab 5 (Week 2): <a href="assignments/summer2021/lab-responsive.html">Responsive Design</a>, Short to Medium</li>
+		<li>Lab 6 (Week 3): <a href="assignments/summer2021/lab-dom.html">Union Strike Folk Song</a>, Short to Medium</li>
+		<li>Lab 7 (Week 3): <a href="assignments/summer2021/lab-json1.html">Messages Part 1</a>, Short</li>
+		<li>Lab 8 (Week 3): <a href="assignments/summer2021/lab-rides.html">The Ride-Hailing Service Part 1</a>, Medium</li>
+		<li>Lab 9 (Week 4): Messages Part 2, Short</li>
+		<li>Lab 10 (Week 4): The Ride-Hailing Service Part 2, Medium to Long</li>
+		<li>Lab 11 (Week 5): Getting Started with the Server Side using Node.js and Heroku, Short to Medium</li>
+		<li>Lab 12 (Week 5): The Ride-Hailing Service Part 3, Long (3+ hours)</li>
+		<li>Lab 13 (Week 6): Security and Privacy Assessment of Ride-Hailing Service, Medium</li>
+	</ul>
+
+	<h2>Frequently Asked Questions</h2>
+	<h3>Q: Is there a textbook for this course?</h3>
+	<p>A: No</p>
+	<h3>Q: Are there teaching assistants (TAs) for this course?</h3>
+	<p>A: No</p>
+	<h3>Q: This course looks a lot like COMP 20: Web Programming! What gives?</h3>
+	<p>That is correct! This course is now COMP 20: Web Programming with add-ons. Here are the reasons behind the changes:</p>
+	<ol>
+		<li>Too many graduate students have wanted to take COMP 20: Web Programming in the past, and it makes no business sense to not allow graduate students to take the course --hence it has to be a 100 level number</li>
+		<li>COMP 120 will be part of the Tufts Computer Science Online Master's Program</li>
+		<li>I have been wanting to change up COMP 120 anyway</li>
+	</ol>
+	<h3>Q: What are the add-ons in this course, the differences between COMP 120 and COMP 20?</h3>
+	<p>Since summer 2020, the biggest change is the move from using MongoDB (a "NoSQL" database) to a SQL database, namely PostgreSQL. The reason for this change: it has been very disheartening to see many students graduating without knowing how to use a SQL-based database system. SQL-based database systems are still widely used in the world, and are also important in the data sciences. Static Content Performance Optimization is also added as a topic.</p>
+	<h3>Q: If I have taken COMP 20: Web Programming in the past, can I take this class?</h3>
+	<p>A: No</p>
+	<h3>Q: Is the old COMP 120 website and content still available?</h3>
+	<p>Sure, <a href="spring2017">here you go (from spring 2017 semester)</a>.</p>
+	<h3>Q: Why is there a course website and a course Canvas?</h3>
+	<p>Canvas is used for (1) quizzes, (2) distributing grades and feedback. This website is used (1) to serve a reference for alumni of this, (2) to serve as a reference for employers who are looking to hire students from this course, and (3) for redundancy if Canvas goes down.</p>
+
+	<h2 id="expectations">Expectations and Structure of This Online Course</h2>
+	<p>This course will be a fun one for sure. A few notes on the expectations and structure of this course:</p>
+
+	<h3>1. What this course will NOT have and what I will NOT do:</h3>
+	<ul>
+		<li>Have set office hours.</li>
+		<li>Have synchronous lectures and long video recordings of lectures.</li>
+		<li>Require students to meet online during specific times.</li>
+		<li>Require students to work in teams, a semester group project.</li>
+		<li>Require students to physical meet at the Tufts Medford Campus.</li>
+	</ul>
+	<p>There are many good reasons why I will not do any of the above items:</p>
+	<ul>
+		<li>It's summertime. Many of you have commitments and plans already scheduled.</li>
+		<li>A number of you are working (full-time or internship). That's more important as people need to live, eat.</li>
+		<li>Some students are taking this course abroad. Thus, there are time zone differences.</li>
+	</ul>
+	<p>Adding constraints and extra burden to your lives especially during the summer will not fit well with anyone. Extra constraints and burden also defeat the purpose of an online course. Thus, you will probably not see me at all this summer.</p>
+
+	<h3>2. You are on your own pace.</h3>
+	<p>You can choose to:</p>
+	<ol>
+		<li>Pace yourself during the week</li>
+		<li>Do everything during the weekend</li>
+		<li>Do everything during the last minute</li>
+		<li>Don't do any of the work</li>
+	</ol>
+	<p>Your choice, but the latter three choices are not wise.</p>
+
+	<h3>3. You are responsible for your own learning.</h3>
+	<p>A very important point: if you want everything gone over in lecture or in notes, then this is not the course for you. More importantly, that's not how things work in real life.</p>
+
+	<h3>4. You will learn by doing.</h3>
+	<p>Each week, there will be at most three labs to hone your skills and to aim at the crux of the matter for the week. Here's an analogy: you don't learn how to cook simply by just reading cookbooks and watching YouTube videos. You learn by making, using your hands, and making mistakes.</p>
+
+	<h3>5. You will learn by asking questions.</h3>
+	<p>It is your responsibility to ask questions early and to ask for help...</p>
+
+	<h3>6. ...and I expect discussions online to be very active and civil.</h3>
+	<p>Share thoughts and respond to other people's questions. I will be online constantly, thus the idea of set office hours almost becomes moot point. It is no secret that I respond very quickly unless I need to be away.</p>
+
+	<p>There is a very good post published by Northeastern University: "How To Be a Successful Online Learner." Link: <a href="https://www.northeastern.edu/graduate/blog/tips-for-taking-online-classes/" target="_blank">https://www.northeastern.edu/graduate/blog/tips-for-taking-online-classes/</a>.</p>
+
+</body>
+
+</html>

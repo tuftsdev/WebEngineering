@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<title>jQuery Test</title>
+	<meta charset="utf8"/>
+	<script src="jquery-3.3.1.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$.get("https://messagehub.herokuapp.com/messages.json", function(data) {
+				console.log(data);
+				$("#info").html(JSON.stringify(data));
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<h1>Messages</h1>
+	<div id="info">Loading...</div>
+</body>
+</html>

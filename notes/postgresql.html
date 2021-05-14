@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="/stylesheets/style.css" />
+<title>COMP 120: Web Programming and Engineering - SQL and PostgreSQL</title>
+</head>
+
+<body>
+<h1>COMP 120: Web Programming and Engineering</h1>
+<h2>SQL and PostgreSQL</h2>
+
+<h3>Why Am I No Longer Using MongoDB</h3>
+<ul>
+<li>Hard to do relationships with records</li>
+<li>Rash of ugly security incidents related to MongoDB in the past</li>
+<li>Relational databases are still predominantly used, too many CS students graduate not knowing how to do a simple <code>SELECT</code> query</li>
+</ul>
+
+<h3>Why SQL?</h3>
+<ul>
+<li>Structured Query Language</li>
+<li>Well-known, battletested, ubiquitous</li>
+<li>A number of relational databases that use SQL including Oracle, MS SQL, MySQL, Postgres, SQLite for embedded systems</li>
+<li>Based on mathematics, relational algebra</li>
+<li>Legacy...</li>
+<li>...including a security vulnerability that has not gone away: SQL injection</li>
+</ul>
+
+<h3>Why Postgres?</h3>
+<ul>
+<li>Fast performance</li>
+<li>Lots of data types including new ones all the time</li>
+<li>Open source</li>
+<li>More reasons at <a href="https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems" target="_blank">https://www.digitalocean.com/community/tutorials/sqlite-vs-mysql-vs-postgresql-a-comparison-of-relational-database-management-systems</a></li>
+<li>Strong support at Heroku for over a decade: <a href="https://www.heroku.com/postgres" target="_blank">https://www.heroku.com/postgres</a></li>
+</ul>
+
+<h3>Important SQL Operations and Concepts To Know (In Order) --Database Independent</h3>
+<ol>
+    <li><a href="https://www.postgresql.org/docs/current/sql-createdatabase.html" target="_blank"><code>CREATE DATABASE</code></a></li>
+    <li><a href="https://www.postgresql.org/docs/current/sql-dropdatabase.html" target="_blank"><code>DROP DATABASE</code></a></li>
+    <li><a href="https://sqlzoo.net/wiki/CREATE_a_new_table" target="_blank"><code>CREATE TABLE</code></a> (a table is a collection of rows, or records, in a database)</li>
+    <li><a href="https://sqlzoo.net/wiki/DROP_a_table" target="_blank"><code>DROP TABLE</code></a></li>
+    <li><a href="https://sqlzoo.net/wiki/SELECT_Reference" target="_blank"><code>SELECT</code></a> (query a table)</li>
+    <li><a href="https://sqlzoo.net/wiki/INSERT_and_DELETE_Reference" target="_blank"><code>INSERT</code></a> (insert a record into a table)</li>
+    <li><a href="https://sqlzoo.net/wiki/INSERT_and_DELETE_Reference" target="_blank"><code>DELETE</code></a> (delete a record from a table)</li>
+    <li><a href="https://sqlzoo.net/wiki/UPDATE_existing_records" target="_blank"><code>UPDATE</code></a> (update an existing record in a table)</li>
+    <li><a href="https://sqlzoo.net/wiki/The_JOIN_operation" target="_blank"><code>JOIN</code></a></li>
+    <li><a href="https://sqlzoo.net/wiki/ALTER_TABLE_..._ADD_COLUMN" target="_blank"><code>ALTER TABLE (to add a column)</code></a></li>
+    <li><a href="https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-PRIMARY-KEYS" target="_blank"><code>PRIMARY KEY</code></a> (for a table)</li>
+    <li><a href="https://www.postgresql.org/docs/current/ddl-constraints.html#DDL-CONSTRAINTS-FK" target="_blank"><code>FOREIGN KEY</code></a> (to reference a field in another table)</li>
+    <li><a href="https://www.postgresql.org/docs/current/sql-createuser.html" target="_blank"><code>CREATE USER</code></a> (create a user with specific permissions to a specific database)</li>
+    <li><a href="https://www.postgresql.org/docs/current/sql-grant.html" target="_blank"><code>GRANT</code></a> (define access privileges for a database to a user)</li>
+    <li><a href="https://www.postgresql.org/docs/current/sql-revoke.html" target="_blank"><code>REVOKE</code></a> (revoke access privileges to a database from a user, the opposite of <code>GRANT</code>)</li>
+</ol>
+
+<h3>Postgres-Specific Commands on <code>psql</code></h3>
+<ul>
+    <li><a href="https://www.postgresql.org/docs/current/app-psql.html"><code>psql</code></a> - PostgreSQL interactive terminal</li>
+    <li><code>\q</code> - Quit <code>psql</code></li>
+    <li><code>\l</code> - List databases</li>
+    <li><code>\d</code> - Describe table</li>
+    <li>Reference: <a href="https://www.postgresql.org/docs/current/app-psql.html" target="_blank">https://www.postgresql.org/docs/current/app-psql.html</a></li>
+</ul>
+
+<h3>Tutorial</h3>
+<ul>
+    <li><a href="https://sqlzoo.net/" target="_blank">SQLZOO</a></li>
+</ul>
+
+<h3>Connecting a Node.js + Express App with Postgres</h3>
+<ul>
+    <li><a href="https://github.com/tuftsdev/WebEngineering/tree/gh-pages/examples/nodejs/nodepsqlapp">nodepsqlapp</a></li>
+    <li><a href="https://asciinema.org/a/337350" target="_blank">Video: Deploying Node.js + Express + Postgres App to Heroku (Asciinema)</a></li>
+</ul>
+
+</body>
+</html>
