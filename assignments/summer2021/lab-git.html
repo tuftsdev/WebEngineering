@@ -31,12 +31,13 @@
 <li>On your computer using the terminal / command line, create a new directory (a.k.a., folder) named <code>hello-world</code> via <code>mkdir hello-world</code>.  This directory can be located anywhere on your computer.  Then go into the directory via <code>cd hello-world</code> (cAsE sEnSiTiVe).</li>
 <li>In the <code>hello-world</code> directory, follow the instructions as noted on the GitHub page (or screenshot above):
 <pre>
-echo "# hello-world" &gt;&gt; README.md
+echo "# hello-world" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
+git branch -M main
 git remote add origin https://github.com/your_github_username_here/hello-world.git
-git push -u origin master
+git push -u origin main
 </pre><br/>The first line <code>echo "# hello-world" &gt;&gt; README.md</code> creates a file named <code>README.md</code> with one line: <code># hello-world</code>.
 </li>
 <li>Make a second commit change.  That is: find a funny image (e.g., using Google), add it to your <code>hello-world</code> repo, commit and push change to GitHub.  Please also write short, one line, coherent commit messages (i.e., no "dr. steve brule" or "asdf" garbage). <span class="note">Important Note 3</span>: Please do not use photos of other students, me, or the TAs. That is just downright creepy.</li>
