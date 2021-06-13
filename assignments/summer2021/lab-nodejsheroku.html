@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width" />
+<link rel="stylesheet" href="/stylesheets/style.css" />
+<title>COMP 120: Web Programming and Engineering - Lab: The Server Side using Node.js and Heroku</title>
+</head>
+
+<body>
+<h1>COMP 120: Web Programming and Engineering</h1>
+<h2>Lab: The Server Side using Node.js and Heroku</h2>
+
+<p class="note">This lab is worth 3 points.</p>
+
+<h2>Lab Objectives</h2>
+<ul>
+<li>Set up your workstation properly to use Node.js and Heroku.</li>
+<li>Build a simple server-side web application and deploy it to Heroku.  This web application should also be used for <a href="lab-rides3.html">part 3 of the ride-hailing service lab</a>.</li>
+<li>Understand how a web server serves dynamic and static content.</li>
+</ul>
+
+<h2>Overview</h2>
+<p>Server-side development is more involved than what we have been doing so far and requires a number of components and software including Node.js and Postgres (database).  You may be using a database in <a href="lab-rides3.html">part 3 of the ride-hailing service lab</a>, but not in this lab.</p>
+<p>For this class, we will deploy our server-side web application to Heroku.  Why use Heroku you may ask?  With Heroku, we do not need to worry about the server hardware, server configuration, and server maintenance.  Server configuration and maintenance require an extraodinary amount of work.  For a more elaborate discussion on Heroku vs Amazon AWS, see <a href="http://stackoverflow.com/questions/9802259/why-do-people-use-heroku-when-aws-is-present-whats-distinguishing-about-heroku" target="_blank">http://stackoverflow.com/questions/9802259/why-do-people-use-heroku-when-aws-is-present-whats-distinguishing-about-heroku</a>.</p>
+
+<h2>Software Requirements (Platform Independent)</h2>
+<ol>
+	<li><a href="https://devcenter.heroku.com/articles/heroku-cli" target="_blank">Heroku Command Line Interface (CLI): https://devcenter.heroku.com/articles/heroku-cli</a></li>
+	<li><a href="https://nodejs.org/en/" target="_blank">Node.js</a>
+		<ul>
+			<li>On macOS, best to use <a href="https://brew.sh/" target="_blank">Homebrew to install Node.js and other software packages that you need</a>. Run <code>brew install nodejs</code></li>
+			<li>For Windows user: <a href="https://treehouse.github.io/installation-guides/windows/node-windows.html" target="_blank">https://treehouse.github.io/installation-guides/windows/node-windows.html</a>
+		</ul>
+	</li>
+</ol>
+
+<h2 class="note">Important Note</h2>
+<ul>
+	<li class="note">Do NOT do this lab or <a href="lab-rides3.html">part 3 of the ride-hailing service lab</a> inside of your private GitHub repository that I created for you!</li>
+</ul>
+
+<h2>Instructions, Part I: Preliminaries</h2>
+<ol>
+<li>Create a Heroku account: <a href="https://www.heroku.com/" target="_blank">https://www.heroku.com/</a> (free)</li>
+<li>In order to use Postgres via addon in a web application on Heroku, you will need to verify your Heroku account via of a credit card. You will not be billed. The reason for this is to verify that you are a human, and not a spammer.  If you do not have a credit card or not comfortable with using one, an alternative option is to buy and use prepaid credit card.</li>
+<li>Follow the instructions at <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction" target="_blank">https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction</a> up to and including the "Provision add-ons" section. <span class="note">IMPORTANT: Be careful in the "Scale the app" section.  I suggest you skip the section because if you are not careful, you will be billed and we will not be responsible for your actions!</span></li>
+<li>Please read the README for the <code>node-js-getting-started</code> example on GitHub: <a href="https://github.com/heroku/node-js-getting-started" target="_blank">https://github.com/heroku/node-js-getting-started</a></li>
+</ol>
+
+<h2>Instructions, Part II: Sending Data To and Serving JSON Data</h2>
+<p>In <a href="lab-rides2.html">part 2 of the ride-hailing service lab</a>, I provided a URL to send data to and in return, receive data on nearby vehicles, <code>https://jordan-marsh.herokuapp.com/rides</code>, a HTTP POST route.  I will be decommissioning this resource after the lab is graded.  Therefore, your map will no longer work.  To make your map work again, you must recreate the server-side, <em>the purpose of <a href="lab-rides3.html">part 3 of the ride-hailing service lab</a></em>.</p>
+
+<p>Modify <code>index.js</code> in your <code>node-js-getting-started</code> so that it serves the following JSON when one accesses the route via <code>POST /rides</code>, the following is returned as the response:</p>
+
+<blockquote><code>[]</code></blockquote>
+
+<p>That is, a hard-coded JSON empty list.</p>
+
+<p>Accessing <code>https://[YOUR_APP_IDENTIFIER_RANDOMLY_GENERATED].herokuapp.com/rides</code> on a web browser will not work (recall Quiz 1 and how web browsers work).  However, if you make an HTTP POST request via <code>curl</code> and send it any data, anything (e.g., <code>curl --data "username=whocares" https://[YOUR_APP_IDENTIFIER_RANDOMLY_GENERATED].herokuapp.com/rides</code>), the JSON string above will be the response.</p>
+
+<p>Once you have completed this, change the URL <code>https://jordan-marsh.herokuapp.com/rides</code> to <code>https://[YOUR_APP_IDENTIFIER_RANDOMLY_GENERATED].herokuapp.com/rides</code> in your <a href="lab-rides2.html">ride-hailing service lab</a> and your map should work with no errors in the JavaScript console. Important Note: you will encounter an error in the JavaScript console of your web browser when you load your map.........</p>
+
+<p>For this part of the lab, you are allowed to use additional Node.js modules although you really do not need to.  You are strongly urged to continue building upon <code>node-js-getting-started</code> for <a href="lab-rides3.html">part 3 of the ride-hailing service lab</a>.  If you want to start a new repository on Heroku for part 3, you will also need to add me as a collaborator for that new Heroku app.</p>
+
+<h2>The <code>README</code> File</h2>
+<p>Modify the <code>README.md</code> file in <code>node-js-getting-started</code> that describes your modifications. This description must:</p>
+<ol>
+<li>Identify what aspects of the work have been correctly implemented and what have not.</li>
+<li>Identify anyone with whom you have collaborated or discussed the lab.</li>
+<li>Say approximately how many hours you have spent completing the lab.</li>
+</ol>
+
+<h2>Submitting the Lab</h2>
+<p>Add me as a collaborator (using my email address <code>mchow[AT]cs[DOT]tufts[DOT]edu</code>) for your web application in Heroku.  You can do this by logging on to Heroku, go to the dashboard for your web application, under "Access", click on the "Add collaborator" button, enter my email address, and click "Save changes".</p>
+
+<h2>Assessment</h2>
+<ul>
+	<li>(1 point) Heroku web application is shared with me, working URL</li>
+	<li>(2 points) Web application serves <code>POST /rides</code> with JSON <code>[]</code> as response</li>
+	<li class="note">No credit will be given if accessing web application results in an "Application Error"</li>
+</ul>
+
+</body>
+</html>
