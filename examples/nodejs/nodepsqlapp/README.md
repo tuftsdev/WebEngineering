@@ -39,7 +39,7 @@ Go to `http://localhost:3000` on a web browser.  You should see your data entry 
 
 # Trying This App Live!
 * https://protected-peak-86481.herokuapp.com/
-* Example data entry: `curl --data "food=Pineapples" https://protected-peak-86481.herokuapp.com//feedme` and see your food entry on https://protected-peak-86481.herokuapp.com/
+* Example data entry: `curl --data "food=Pineapples" https://protected-peak-86481.herokuapp.com/feedme` and see your food entry on https://protected-peak-86481.herokuapp.com/
 
 # Exercises
 1. Explain why if you run `curl --data "fooditem=steaks" http://localhost:3000/feedme`, the data will not be stored correctly in Postgres table.
