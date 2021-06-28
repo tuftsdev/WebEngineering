@@ -1,0 +1,15 @@
+{
+	"name": "jordan-marsh",
+	"version": "2.0.0",
+	"author": "Ming Chow <mchow@cs.tufts.edu>",
+	"scripts": {
+		"start": "node server.js"
+	},
+	"dependencies": {
+		"body-parser": "^1.19.0",
+		"compression": "^1.7.0",
+		"express": "^4.15.2",
+		"pg": "^8.0.0",
+		"validator": "^13.0.0"
+	}
+}
