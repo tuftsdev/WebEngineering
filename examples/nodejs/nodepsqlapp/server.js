@@ -15,9 +15,9 @@ app.use(bodyParser.urlencoded({ extended: true })); // Required if we need to us
 const { Client } = require('pg');
 const client = new Client({
 	connectionString: process.env.DATABASE_URL || "postgres://nodepsqlapp_user:abc123@localhost:5432/nodepsqlapp",
-	ssl: {
+	/*ssl: {
 		rejectUnauthorized: false
-	}
+	}*/
 });
 client.connect();
 
