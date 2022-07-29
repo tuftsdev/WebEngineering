@@ -1,0 +1,14 @@
+/* For spring 2019 */
+
+.peeps {
+    background-color: yellow;
+    font-size: 96px;
+    color: blue;
+    border: dashed;
+}
+
+#header {
+    text-align: center;
+    font-family: "Helvetica";
+    background-color: green;
+}

@@ -1,0 +1,13 @@
+{
+	"name": "nodepsqlapp",
+	"version": "0.0.1",
+	"author": "Ming Chow <mchow@cs.tufts.edu>",
+	"main": "server.js",
+	"dependencies": {
+		"body-parser": "latest",
+		"compression": "latest",
+		"express": "latest",
+		"pg": "latest",
+		"validator": "latest"
+	}
+}
