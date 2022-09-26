@@ -1,0 +1,17 @@
+
+#header { /* this is an ID selector --ID selectors start with a pound symbol */
+    text-align: center;
+    border-style: dashed;
+}
+
+.peeps { /* this is an class selector --class selectors start with a .*/
+    font-size: 64px;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: purple;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+}
