@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html lang="en">
+    <head>
+        <title>List of Current MBTA Stations</title>
+        <meta charset="utf-8"/>
+        <script>
+            // Idea: load JSON data from https://mbta-message-hub.herokuapp.com/latest.json
+            // ...get all the station names
+            // ...list station names in the <div...>
+            function loadStations() {
+                console.log("Inside loadStations() JavaScript function...");
+
+                // Step 1: make an instance of XHR
+                console.log("Making instance of XHR...");
+                request = new XMLHttpRequest();
+
+                // Step 2: Make request to the JSON source...
+                console.log("Opening XHR...");
+                request.open("GET", "https://mbta-message-hub.herokuapp.com/latest.json");
+
+                // Step 2A: Dealing with receiving the HTTP response from XHR
+                request.onreadystatechange = function() {
+                    // This function deals with receiving HTTP response...
+                    console.log("Ready state has changed! Inside of callback() function...")
+                    console.log("readyState == " + request.readyState);
+                    if (request.readyState == 4 && request.status == 200) {
+                        // We got HTTP response data back!
+                        resultingData = request.responseText; // responseText => string
+                        mbtaData = JSON.parse(resultingData);
+                        stationsSection = document.getElementById("stations");
+                        stationsSection.innerHTML = "";
+                        for (numLines = 0; numLines < mbtaData.length; numLines++) {
+                            for (numStations = 0; numStations < mbtaData[numLines].stations.length; numStations++) {
+                                stationsSection.innerHTML = stationsSection.innerHTML + "<p>" + mbtaData[numLines].stations[numStations].title + "</p>";
+                            }
+                        }
+                    }
+                };
+
+                // Step 3: Send the request...
+                console.log("Sending request...");
+                request.send();
+            }
+
+        </script>
+    </head>
+
+    <body onload="loadStations()">
+        <h1>List of Current MBTA Stations</h1>
+        <div id="stations">Loading...</div>
+    </body>
+</html>
