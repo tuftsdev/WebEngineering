@@ -7,7 +7,7 @@
 	<script src="jquery-3.3.1.min.js"></script>
 	<script>
 		$(document).ready(function() {
-			$.get("https://messagehub.herokuapp.com/messages.json", function(data) {
+			$.get("https://mbta-message-hub.herokuapp.com/latest.json", function(data) {
 				console.log(data);
 				$("#info").html(JSON.stringify(data));
 			});
@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	<h1>Messages</h1>
+	<h1>List of Current MBTA Stations</h1>
 	<div id="info">Loading...</div>
 </body>
 </html>
