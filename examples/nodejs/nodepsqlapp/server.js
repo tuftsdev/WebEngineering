@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/feedme', function(request, response) {
 	var foodItem = request.body.food;
-	foodItem = validator.escape(foodItem); // what happens if you comment this line out?
+	//foodItem = validator.escape(foodItem); // what happens if you comment this line out?
 	client.query('INSERT INTO fooditems (food) VALUES ($1)', [foodItem], (error, result) => {
 		if (!error) {
 			response.send('<html lang="en"><head><title>Thanks!</title></head><body><h2>Thanks for your submission!</h2></body></html>');
