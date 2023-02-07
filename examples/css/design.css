@@ -1,0 +1,56 @@
+/* New stylesheet created by spring 2023 class */
+/* This is a comment */
+
+body {
+    background-color: lightblue;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+
+/*
+- Lines 4 - 8 => a stylesheet rule
+- `body` in line 4 => selector
+- `font-size: 16px;` in line 7 => declaration
+- A single declaration is an attribute-value pair separated by ":"
+- A rule can have multiple declarations
+*/
+
+p {
+    background-color: pink;
+    text-decoration-line: underline;
+    color: red;
+}
+
+div {
+    background-color: yellow;
+}
+
+#header {
+    text-align: center;
+}
+
+/* line 28, the "#" in selector => ID selector --should be used only one time and one time only */
+
+#closing {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 8px;
+}
+
+.peeps {
+    font-size: 64px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border-style: dashed;
+    background-color: purple;
+    color: white;
+}
+
+/* line 39, the "." in selector => class selector --can be used multiple times in any element */
+
+p {
+    background-color: darkcyan;
+    margin-left: 20%;
+    margin-right: 20%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color:blue;
+}
