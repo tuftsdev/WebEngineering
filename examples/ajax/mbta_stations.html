@@ -5,29 +5,32 @@
         <title>List of Current MBTA Stations</title>
         <meta charset="utf-8"/>
         <script>
-            // Idea: load JSON data from https://mbta-message-hub.herokuapp.com/latest.json
+            // Idea: load JSON data from https://mbta-message-hub.herokokuapp.com/latest.json
             // ...get all the station names
-            // ...list station names in the <div...>
+            // ...list station names in the <div id="stations">...
             function loadStations() {
-                console.log("Inside loadStations() JavaScript function...");
+                console.log("Inside loadStations() function");
 
-                // Step 1: make an instance of XHR
+                // Step 1: Make an instance of XHR
                 console.log("Making instance of XHR...");
                 request = new XMLHttpRequest();
 
-                // Step 2: Make request to the JSON source...
-                console.log("Opening XHR...");
+                // Step 2: Make a request to the JSON source
+                console.log("Opening up a request to JSON source");
                 request.open("GET", "https://mbta-message-hub.herokuapp.com/latest.json");
 
-                // Step 2A: Dealing with receiving the HTTP response from XHR
+                // Step 2A: Dealing with and receiving the response
                 request.onreadystatechange = function() {
-                    // This function deals with receiving HTTP response...
-                    console.log("Ready state has changed! Inside of callback() function...")
-                    console.log("readyState == " + request.readyState);
-                    if (request.readyState == 4 && request.status == 200) {
-                        // We got HTTP response data back!
-                        resultingData = request.responseText; // responseText => string
+                    // This anonymous function deals with receiving HTTP response
+                    console.log("Ready state has changed! Inside of callback function...")
+                    console.log("readyState is " + request.readyState);
+                    if (request.readyState == 4) {
+                        // We got the HTTP response back!
+                        console.log("We got the response back!  Dinner is ready!");
+                        resultingData = request.responseText; // responseText is a string
+                        console.log(resultingData);
                         mbtaData = JSON.parse(resultingData);
+                        console.log(mbtaData);
                         stationsSection = document.getElementById("stations");
                         stationsSection.innerHTML = "";
                         for (numLines = 0; numLines < mbtaData.length; numLines++) {
@@ -38,11 +41,10 @@
                     }
                 };
 
-                // Step 3: Send the request...
-                console.log("Sending request...");
+                // Step 3: Send the request
+                console.log("Sending the request");
                 request.send();
             }
-
         </script>
     </head>
 
