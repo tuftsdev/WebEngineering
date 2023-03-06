@@ -5,28 +5,24 @@
 <title>Where Am I?</title>
 <link rel="stylesheet" href="gmap_api_example_style.css" />
 <script>
-	var lat = -99999;
-	var lng = -99999;
-	function getLocation() {
-		console.log("I am here 1");
+	var myLat = 0;
+	var myLng = 0;
+	function getMyLocation() {
+		console.log("In here 1");
 		navigator.geolocation.getCurrentPosition(function(somePos) {
-			console.log("I am here 2");
-			lat = somePos.coords.latitude;
-			lng = somePos.coords.longitude;
-			printLocation();
+			console.log("In here 2. NOTE: here, you are guaranteed to get a real lat and lng");
+			myLat = somePos.coords.latitude;
+			myLng = somePos.coords.longitude;
+			document.getElementById("location").innerHTML = "My location: " + myLat + ", " + myLng;
 		});
-		console.log("I am here 3");
-	}
-
-	function printLocation() {
-		console.log("I am here 4");
-		elem = document.getElementById("location");
-		elem.innerHTML = '<p class="fun">' + lat + ", " + lng + "</p>";
-	}
+		console.log("In here 3");
+		console.log("In here 4");
+		console.log("In here 5");
+}
 </script>
 </head>
 
-<body onload="getLocation()">
+<body onload="getMyLocation()">
 	<h1>Where Am I</h1>
 	<div id="location">Trying to determine location...</div>
 </body>
