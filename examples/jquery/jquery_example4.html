@@ -4,16 +4,16 @@
 
 <head>
 <title>COMP 120: Web Programming and Engineering</title>
-	<script src="jquery-3.3.1.min.js"></script>
+	<script src="jquery-3.6.4.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$("div#today ul").hide();
 			$("div#yesterday ul").hide();
 			$("div#today p").click(function() {
-				$("div#today ul").slideToggle('fast');
+				$("div#today ul").slideToggle('slow');
 			});
 			$("div#yesterday p").click(function() {
-				$("div#yesterday ul").slideToggle('fast');
+				$("div#yesterday ul").slideToggle('slow');
 			});
 		});
 	</script>
